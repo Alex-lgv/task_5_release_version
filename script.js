@@ -139,7 +139,7 @@ const transformAnsArr = (arr) => {
       } else {
         return arr.toString().replaceAll(',', '');
       }
-    } else if (arr.length === 2 && arr[0] === 1) {
+    } else if (arr.length === 2 && arr[0] === 1 && arr[1] > 0) {
       console.log(arr);
       ansNum2 = arr[1];
       newStr = `${secondNums[ansNum2 - 1]}`;
@@ -149,7 +149,7 @@ const transformAnsArr = (arr) => {
       } else {
         return arr.toString().replaceAll(',', '');
       }
-    } else if (arr.length === 2 && arr[1] === 0) {
+    } else if (arr.length === 2 && arr[0] > 0 && arr[1] === 0) {
       console.log(arr);
       ansNum1 = arr[0];
       newStr = `${thirdNums[ansNum1 - 1]}`;
@@ -159,7 +159,7 @@ const transformAnsArr = (arr) => {
       } else {
         return arr.toString().replaceAll(',', '');
       }
-    } else if (arr.length === 2) {
+    } else if (arr.length === 2 && arr[0] > 1 && arr[1] > 0) {
       console.log(arr);
       ansNum1 = arr[0];
       ansNum2 = arr[1];
@@ -262,7 +262,7 @@ const transformAnsArr = (arr) => {
       } else {
         return arr.toString().replaceAll(',', '');
       }
-    } else if (arr.length === 3 && arr[1] > 1 && arr[2] === 0) {
+    } else if (arr.length === 2 && arr[1] > 0 && arr[2] === 0) {
       console.log(arr);
       ansNum1 = arr[1];
       newStr = `минус ${thirdNums[ansNum1 - 1]}`;
@@ -272,7 +272,7 @@ const transformAnsArr = (arr) => {
       } else {
         return arr.toString().replaceAll(',', '');
       }
-    } else if (arr.length === 3) {
+    } else if (arr.length === 3 && arr[1] > 1 && arr[2] > 0) {
       console.log(arr);
       ansNum1 = arr[1];
       ansNum2 = arr[2];
@@ -419,7 +419,7 @@ document.getElementById('btnLess').addEventListener('click', function () {
       gameRun = false;
     } else {
       maxValue = answerNumber - 1;
-      answerNumber = Math.floor((minValue + maxValue) / 2);
+      answerNumber = Math.ceil((minValue + maxValue) / 2);
       if (answerNumber > 0) {
         if (answerNumber > 0) {
           arrAnsNumber = numToNumArr(answerNumber);
