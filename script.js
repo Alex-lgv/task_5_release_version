@@ -319,7 +319,7 @@ const transformAnsArr = (arr) => {
       } else {
         return arr.toString().replaceAll(',', '');
       }
-    } else if (arr.length === 3 && arr[1] > 0 && arr[2] > 0) {
+    } else if (arr.length === 3 && arr[1] > 1 && arr[2] > 0) {
       console.log(arr);
       ansNum1 = arr[0];
       ansNum2 = arr[1];
@@ -329,8 +329,7 @@ const transformAnsArr = (arr) => {
       }`;
       console.log(`${newStr}: ${newStr.length}`);
       if (newStr.length < 20) {
-        return;
-        `${fourthNums[ansNum1 - 1]} ${thirdNums[ansNum2 - 1]} ${
+        return `${fourthNums[ansNum1 - 1]} ${thirdNums[ansNum2 - 1]} ${
           firstNums[ansNum3 - 1]
         }`;
       } else {
