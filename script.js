@@ -13,9 +13,17 @@ formBtn.addEventListener('click', () => {
 
   minValue < -999 ? (minValue = -999) : minValue + 0;
   maxValue > 999 ? (maxValue = 999) : maxValue + 0;
+
   answerNumber = Math.floor((minValue + maxValue) / 2);
+  if (answerNumber > 0) {
+    arrAnsNumber = numToNumArr(answerNumber);
+  } else if (answerNumber === 0) {
+    arrAnsNumber = [0];
+  } else if (answerNumber < 0) {
+    arrAnsNumber = numToNagativeNumArr(answerNumber);
+  }
   console.log(answerNumber);
-  answerField.innerText = `Ваше число ${answerNumber}?`;
+  answerField.innerText = `Ваше число ${transformAnsArr(arrAnsNumber)}?`;
   orderNumber = 1;
   orderNumberField.innerText = orderNumber;
   console.log(minValue);
@@ -421,13 +429,7 @@ document.getElementById('btnLess').addEventListener('click', function () {
       maxValue = answerNumber - 1;
       answerNumber = Math.ceil((minValue + maxValue) / 2);
       if (answerNumber > 0) {
-        if (answerNumber > 0) {
-          arrAnsNumber = numToNumArr(answerNumber);
-        } else if (answerNumber === 0) {
-          arrAnsNumber = [0];
-        } else if (answerNumber < 0) {
-          arrAnsNumber = numToNagativeNumArr(answerNumber);
-        }
+        arrAnsNumber = numToNumArr(answerNumber);
       } else if (answerNumber === 0) {
         arrAnsNumber = [0];
       } else if (answerNumber < 0) {
