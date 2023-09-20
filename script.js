@@ -270,7 +270,7 @@ const transformAnsArr = (arr) => {
       } else {
         return arr.toString().replaceAll(',', '');
       }
-    } else if (arr.length === 2 && arr[1] > 0 && arr[2] === 0) {
+    } else if (arr.length === 3 && arr[1] > 0 && arr[2] === 0) {
       console.log(arr);
       ansNum1 = arr[1];
       newStr = `минус ${thirdNums[ansNum1 - 1]}`;
